@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Melike Babat</title>
+</head>
 <body>
-<h2>2019 Güz Döneminin ilk ödevi</h2>
+<h1>Melike Babat 2019280016</h1>
+<h2>2019 GÃ¼z DÃ¶neminin ilk Ã¶devi</h2>
 <label for="id1">Metin kutusu 1</label>
-<input type='text' id='id1' /> 
+<input type="text" id="id1" onkeypress="kontrol(event)"/> 
 <br>
 <label for="id2">Metin kutusu 2</label>
-<input type='text' id='id2' /> 
+<input type="text" id="id2" onkeypress="kontrol(event)"/> 
 <br><br>
-<button type="button">Topla</button>
+<button type="button" onclick="toplam()">Topla</button>
 <br><br>
 <label for="id3">Metin kutusu 3</label>
 <input type='text' id='id3' /> 
@@ -16,6 +20,39 @@
 <label for="id4">Metin kutusu 4</label>
 <input type='text' id='id4' /> 
 <br><br>
-<button type="button">Yapýþtýr</button>
+<button type="button" onclick="birlestir()">YapÄ±ÅŸtÄ±r</button>
+<script language="Javascript">
+function toplam() {
+var sayi1 = document.getElementById("id1").value;
+var sayi2 = document.getElementById("id2").value;
+sayi1=Number(sayi1);
+sayi2=Number(sayi2);
+var toplam = sayi1+sayi2;
+alert(toplam);
+}
+function birlestir() {
+var sayi3 = document.getElementById("id3").value;
+var sayi4 = document.getElementById("id4").value;
+var string1 = sayi3.toString();
+var string2 = sayi4.toString();
+var birlestir = string1+string2;
+alert(birlestir);
+}
+function kontrol(event)
+{
+if(event.keyCode != 8 && event.keyCode !=0 && (event.keyCode < 48 || event.keyCode > 57))
+{
+event.returnValue = false;
+}
+}
+/*
+KAYNAK
+https://www.yazilimkodlama.com/web/javascript-toplama-ornegi-2/
+https://www.youtube.com/watch?v=v6WgrDwgx2U
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_form
+https://www.yazilimbilisim.net/javascript/javascript-tur-donusumu/
+*/
+	
+</script>
 </body>
 </html>
